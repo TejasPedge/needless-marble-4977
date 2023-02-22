@@ -1,0 +1,17 @@
+
+
+.mySwiper {
+
+    border: 2px solid red;
+
+    z-index: -1;
+
+}
+
+
+.swiperslide {
+
+    overflow: hidden;
+    border: '2px solid green';
+    border-radius: 10px;
+}

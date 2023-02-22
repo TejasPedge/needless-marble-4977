@@ -1,0 +1,92 @@
+.dropdown {
+
+    top : 60.2px;
+
+    width: 100.120%;
+
+    left: -10px;
+
+    right: 0px;
+
+    height: 0px;
+
+    overflow: hidden;
+
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1)
+
+}
+
+.drp0:hover ~ .dropdown{
+
+    height : 500px ;
+
+
+}
+
+
+
+.dropdown:hover {
+
+    height : 500px;
+
+}
+
+
+
+@media screen and (max-width : 1366px) {
+
+    .drp0:hover ~ .dropdown{
+
+        height : 540px ;
+    
+    
+    }
+    
+    
+    
+    .dropdown:hover {
+    
+        height : 540px;
+    
+    }
+    
+}
+
+
+
+
+
+
+
+@media screen and (max-width : 1224px) {
+
+    .drp0:hover ~ .dropdown{
+
+        height : 580px ;
+    
+    
+    }
+    
+    
+    
+    .dropdown:hover {
+    
+        height : 580px;
+    
+    }
+    
+}
+
+
+
+
+
+
+.c{
+
+    color: rgba(4, 11, 30, 0.473);
+
+    color : rgba(204, 201, 201, 0.464);
+
+    color: rgba(7, 18, 47, 0.473);
+}
