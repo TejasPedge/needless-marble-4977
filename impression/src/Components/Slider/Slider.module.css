@@ -1,18 +1,25 @@
 
 
-.mySwiper {
+/* .mySwiper {
 
-    border: 2px solid red;
+    border: 2px solid rgb(195, 15, 15);
 
-    z-index: -1;
-        
     
-}
+    
+} */
 
 
 .swiperslide {
 
     overflow: hidden;
-    border: '2px solid green';
+    
     border-radius: 10px;
+
+}
+
+
+.swiperslide:hover {
+
+    cursor : pointer;
+
 }
