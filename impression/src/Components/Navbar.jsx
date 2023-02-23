@@ -39,8 +39,7 @@ import LoginIcon from '@mui/icons-material/Login';
 
 // ------------------------------------- //
 
-
-
+import Slider from './Slider/Slider';
 // ---------- after Navbar dropdown Array ------------- \\
 
 
@@ -68,7 +67,30 @@ export default function Navbar() {
 
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const btnRef = useRef()
+  const btnRef = useRef();
+
+  const Hidedrawer = ( ) => {
+
+       let width = window.innerWidth;
+
+       console.log(' ✈️🛩️from Navbar component', width);
+
+       if (width >= 1157 ) {
+
+           onClose();
+
+       }
+
+  }
+
+  
+  window.addEventListener('resize', function(event) {
+    // Call your function here
+    Hidedrawer();
+  });
+
+  
+
 
 
   const responsive_search = {
@@ -126,7 +148,7 @@ export default function Navbar() {
         {/* ---*****--- NavBar Code starts from here ---*****--- */}
 
        
-        <Box  minW = '415px' bg ={useColorModeValue('rgba(255, 255, 255, 0.564)','#001e3cb4')} background={useColorModeValue('linear-gradient(324deg, rgba(255,255,255,1) 0%, rgba(225,240,255,1) 60%, rgba(222,217,255,1) 94%, rgba(253,242,255,1) 100%)',   'linear-gradient(324deg, rgba(1,32,64,1) 0%, rgba(0,29,54,1) 53%, rgba(8,24,62,1) 94%, rgba(1,29,34,1) 100%)')} zIndex={1} className="blur-nav" filter={'auto'} backdropFilter='blur(26px)' position={'sticky'} top='0' as = 'nav' >
+        <Box  minW = '415px' bg ={useColorModeValue('rgba(255, 255, 255, 0.564)','#001e3cb4')} background={useColorModeValue('linear-gradient(324deg, rgba(255,255,255,1) 0%, rgba(225,240,255,1) 60%, rgba(222,217,255,1) 94%, rgba(253,242,255,1) 100%)',   'linear-gradient(324deg, rgba(1,32,64,1) 0%, rgba(0,29,54,1) 53%, rgba(8,24,62,1) 94%, rgba(1,29,34,1) 100%)')} zIndex={2} className="blur-nav" filter={'auto'} backdropFilter='blur(26px)' position={'sticky'} top='0' as = 'nav' >
 
             <HStack borderBottom = {{base : '1px solid','1157px' : 'none'}} borderColor={useColorModeValue('gray.300','blue.700')} minW = '415px' py={'10px'}  px = {{ base : '0px', '528px' : '10px'}} paddingRight = {{base : '15px','528px' : '30px','1095px' : '45px'}} justify={'space-between'}  >
 
@@ -223,20 +245,15 @@ export default function Navbar() {
                    
             </HStack>
 
+           
 
         </Box>
+
+
       
+        <Navdrawer  isOpen = {isOpen} onOpen = {onOpen} onClose = {onClose} btnRef = {btnRef}></Navdrawer>
 
-
-
-
-
-
-          <Navdrawer isOpen = {isOpen} onOpen = {onOpen} onClose = {onClose} btnRef = {btnRef}></Navdrawer>
-
-
-
-
+ 
     </>
 
 }

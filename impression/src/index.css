@@ -27,3 +27,11 @@ code {
 }
 
 
+/* scrollbar css */
+
+.scrollbar::-webkit-scrollbar{
+
+  display : none
+
+}
+
