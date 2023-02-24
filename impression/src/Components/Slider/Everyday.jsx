@@ -34,11 +34,14 @@ const Slider_Images = [
 
 
 function Everyday({navigation}) {
+
+   
+
   return (
 
     <Box  width = {['92%','94%']} m = 'auto'  pt = '4'>
 
-          <Text color={useColorModeValue('black', 'white')} mb = '3' fontWeight={'600'} fontSize={['21px','22px','23px','24px']}>Everyday Essentials</Text>
+          <Text color={useColorModeValue('black', 'white')} mb = '2.5' fontWeight={'600'} fontSize={'24'}>Everyday Essentials</Text>
 
           <Image display = {{base : 'none','730px' : 'block'}} mb = '9' _hover = {{cursor : 'pointer'}} borderRadius={'8px'} src = {'https://images-static.nykaa.com/uploads/2adda7a5-567a-4db1-b408-06c96be60287.jpg?tr=w-3200,cm-pad_resize'}></Image>
 
@@ -135,7 +138,7 @@ function Everyday({navigation}) {
 
                                         </Box>
 
-                                        <Box mb = '5' borderBottomRadius={'10px'} bg = {'white'} p = '2' w = '100%'>
+                                        <Box mt = '-1' mb = '5' borderBottomRadius={'10px'} border = 'none' bg = {'white'} p = '2' py = '3' w = '100%'>
                                                 
                                                 <Text noOfLines={1} fontSize={'17'} fontWeight={'600'} color = 'black'>{el.title}</Text>
 

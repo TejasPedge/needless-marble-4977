@@ -49,11 +49,13 @@ function NewatImpression({navigation,Impression_data,heading}) {
 
     const {colorMode} = useColorMode();
 
+    console.log(navigation, 'navb')
+
   
 return (
     <Box  mb = '5'>
 
-         <Text mb = '3' fontWeight={'600'} fontSize={'24px'}>{heading}</Text>
+         <Text mb = '2.5' fontWeight={'600'} fontSize={'24px'}>{heading}</Text>
 
               {/* jgj */}
 

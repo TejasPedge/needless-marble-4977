@@ -6,7 +6,7 @@ function OnlyatImpression() {
   return (
     <Box  width = {['92%','94%']} m = 'auto'  pt = '4'>
 
-         <Text color={useColorModeValue('black', 'white')} mb = '3' fontWeight={'600'} fontSize={['21px','22px','23px','24px']}>Only At Impression</Text>
+         <Text color={useColorModeValue('black', 'white')} mb = '2.5' fontWeight={'600'} fontSize={['21px','22px','23px','24px']}>Only At Impression</Text>
 
 
          <SimpleGrid mb = {{base : '6','512px' : '8'}} columns={{base : 1,'512px' : 2,'841px' : 3}} spacing = {{base : '4','512px' : '6'}}>  

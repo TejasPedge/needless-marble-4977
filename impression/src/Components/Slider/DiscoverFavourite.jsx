@@ -40,7 +40,7 @@ function DiscoverFavourite({navigation}) {
   return (
     <Box mt = '54px'>
 
-        <Text  mb = '3' fontWeight={'600'} fontSize={'24px'}>Discover Our Favourites</Text>
+        <Text  mb = '2.5' fontWeight={'600'} fontSize={'24px'}>Discover Our Favourites</Text>
 
         <Image display = {{base : 'none','730px' : 'block'}} mb = '9' _hover = {{cursor : 'pointer'}} borderRadius={'8px'} src = {'https://images-static.nykaa.com/uploads/82eed1ab-64b2-4cb9-818b-9b39cd9284ec.jpg?tr=w-3600,cm-pad_resize'}></Image>
 

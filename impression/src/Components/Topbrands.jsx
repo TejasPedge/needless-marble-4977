@@ -83,7 +83,7 @@ function Topbrands() {
     <Box w = '97%' m = 'auto' mt = '10'>
 
 
-         <Text color={useColorModeValue('black', 'white')} mb = '3' fontWeight={'600'} fontSize={'24px'}>Top Brands</Text>
+         <Text color={useColorModeValue('black', 'white')} mb = '2.5' fontWeight={'600'} fontSize={'24px'}>Top Brands</Text>
                      
 
     <SimpleGrid columns={{base : '1','512px' : '2','841px' : '3'}} spacing = {{base : '4','512px' : '5'}}>

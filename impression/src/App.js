@@ -29,6 +29,16 @@
 
  import CategoriesinFocus from "./Components/CategoriesinFocus";
 
+ import InfluencersPicks from "./Components/Slider/InfluencersPicks";
+
+ import BuyingGuides from "./Components/Slider/BuyingGuides";
+
+ import EditorsChoise from "./Components/Slider/EditorsChoise";
+
+ import Gamezone from "./Components/Gamezone";
+
+ import BeautyAdvice from "./Components/BeautyAdvice";
+
  function App() {
 
    const [slidervisibility,setSliderbtnvisibility] = useState(true)
@@ -68,7 +78,7 @@
             <Navbar />
 
 
-      <Box border = '2px solid red' h = '1000vh' minW={'415px'}>
+      <Box border = '2px solid red' h = '1400vh' minW={'415px'}>
 
         
                {/*  Mobile view skin  care  section */}
@@ -108,7 +118,7 @@
 
                 <Box mt = {{base : useColorModeValue('0','2'),'472px' : '2'}}>
 
-                    <Text color={useColorModeValue('black', 'white')} mb = '3' fontWeight={'600'} fontSize={'24px'}>Best In Beauty</Text>
+                    <Text color={useColorModeValue('black', 'white')} mb = '2.5' fontWeight={'600'} fontSize={'24px'}>Best In Beauty</Text>
                           
                     <Slider navigation = {slidervisibility} />
                     
@@ -143,7 +153,7 @@
 
                 <Box mt = '10' display = {{base : 'none','974px' : 'block'}}>
 
-                    <Text mb = '3' color={useColorModeValue('black', 'white')} fontWeight={'600'} fontSize={'24px'}>First Purchase App Offers</Text>
+                    <Text mb = '2.5' color={useColorModeValue('black', 'white')} fontWeight={'600'} fontSize={'24px'}>First Purchase App Offers</Text>
                           
                     <Image _hover = {{cursor : 'pointer'}} w = '100%' borderRadius={'5px'} src = 'https://images-static.nykaa.com/uploads/8aa5e37a-3b29-46da-b782-9ed02a4ec064.jpg?tr=w-1600,cm-pad_resize'></Image>
 
@@ -181,7 +191,7 @@
 
                            {/* ----------Popular Picks ---------------- */}
 
-                           <PopularPics />
+                           <PopularPics navigation = {slidervisibility} />
 
                      </Box>
 
@@ -199,8 +209,30 @@
 
               <Box width = {['92%','94%']} m = 'auto' border = '2px solid blue' mt = '4'>
 
-                     <CategoriesinFocus />     
+                     <CategoriesinFocus />   
+
+                         {/* ---------------Influencer's Picks -------------------- */}
+
+                     <InfluencersPicks navigation={slidervisibility} />
+
+                         {/*-----------------Buying Guides--------------------------*/}
+
+                     <BuyingGuides navigation={slidervisibility} />
+
+                         {/* ----------------Editor's Choice ------------------------*/}
+
+                     <EditorsChoise navigation={slidervisibility}/>
+
+                         {/* ---------------Game Zone -------------------------------*/}
                 
+                     <Gamezone/>
+
+                          {/* --------------Beauty Advice----------------------------*/}
+
+                     <BeautyAdvice/>
+
+
+
               </Box>
 
 
