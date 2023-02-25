@@ -5,7 +5,7 @@
 
  import './index.css'
 
- import { Box, Button,Text, Image,HStack, Flex, VStack} from "@chakra-ui/react";
+ import { Box,Center, Button,Text, Image,HStack, Flex, VStack} from "@chakra-ui/react";
 
  import { useColorModeValue } from "@chakra-ui/react";
 
@@ -37,7 +37,11 @@
 
  import Gamezone from "./Components/Gamezone";
 
+ import GiftingAtImpression from "./Components/GiftingAtImpression";
+
  import BeautyAdvice from "./Components/BeautyAdvice";
+
+ import Footer from "./Components/Footer/Footer";
 
  function App() {
 
@@ -78,7 +82,7 @@
             <Navbar />
 
 
-      <Box border = '2px solid red' h = '1400vh' minW={'415px'}>
+      <Box border = '2px solid red' minW={'415px'}>
 
         
                {/*  Mobile view skin  care  section */}
@@ -144,7 +148,7 @@
 
                        <Image _hover = {{cursor : 'pointer'}} w = {{base : '305px','640px' : '49%'}} src = 'https://images-static.nykaa.com/uploads/9882cc03-45ed-4d66-b4a7-4d34db83e720.png?tr=w-1600,cm-pad_resize'></Image>
 
-                       <Image _hover = {{cursor : 'pointer'}} w = {{base : '305px','640px' : '49%'}} src = 'https://images-static.nykaa.com/uploads/0d1c3504-723a-40b7-b688-2f9abe8b4ee6.jpg?tr=w-1600,cm-pad_resize'></Image>
+                       <Image _hover = {{cursor : 'pointer'}} w = {{base : '305px','640px' : '49%'}} src = 'https://images-static.nykaa.com/uploads/cb621d04-dd19-4707-bc2e-47a2636e6b39.jpg?tr=w-1600,cm-pad_resize'></Image>
 
                 </HStack>
 
@@ -207,7 +211,7 @@
       {/* -------------------------------------------------------------- */}
                       
 
-              <Box width = {['92%','94%']} m = 'auto' border = '2px solid blue' mt = '4'>
+              <Box width = {['92%','94%']} m = 'auto' mt = '4'>
 
                      <CategoriesinFocus />   
 
@@ -227,13 +231,31 @@
                 
                      <Gamezone/>
 
+
+                          {/* ---------------Gifting At Impression ---------------*/}
+
+                     <GiftingAtImpression />
+
                           {/* --------------Beauty Advice----------------------------*/}
 
                      <BeautyAdvice/>
 
+                            {/* Fraudulent Calls Warning */}
 
+                    <Center border = '2px solid' borderColor={useColorModeValue('rgba(246, 203, 210, 0.753)', 'rgb(0, 183, 255)')} bg = {useColorModeValue('rgba(255, 219, 225, 0.732)', 'rgba(23, 139, 185, 0.752)')} mt = '10'  borderRadius = '10px' p = {{base : '3','512px' : '4','1239px':'10'}}>
+
+
+                           <Text textAlign={'center'} fontSize={{base : '10' , '512px' : '18'}}> Please be careful of fraudulent calls & SMSes! Impression will never 
+                                  call you with offers pertaining to free gifts or prizes or ask for payments through links.</Text>
+
+                    </Center>
 
               </Box>
+
+
+              {/* ----------------------- Footer------------------------ */}
+
+              <Footer />
 
 
  

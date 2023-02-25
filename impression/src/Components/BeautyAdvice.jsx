@@ -8,7 +8,7 @@ function BeautyAdvice() {
  const {colorMode} = useColorMode();
 
   return (
-    <Box pt = '9'>
+    <Box  mt = {{base : '7','512px':'10'}}>
 
                 <Box lineHeight={1.3}>
 
