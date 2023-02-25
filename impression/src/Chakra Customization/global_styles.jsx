@@ -6,7 +6,7 @@ const Custom_theme = {
       global: (props) => ({
         body: {
           fontFamily: 'body',
-          color: mode('gray.800', 'whiteAlpha.900')(props),
+          color: mode('black', 'white')(props),
           bg: mode('white', '#001e3c')(props),
           lineHeight: 'base',
         },
