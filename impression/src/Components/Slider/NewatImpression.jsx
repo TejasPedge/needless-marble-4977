@@ -137,9 +137,7 @@ return (
                         console.log(el,'hii')
 
                         return <SwiperSlide className={style.swiperslide2} key = {Math.random()}>
-                             
-                         
-                         <Skeleton isLoaded = {isLoaded}>
+                      
 
                                 <Box borderRadius={'8px'} overflow={'hidden'} bg = 'white' pb = '25px' position={'relative'} border = '1px solid' borderColor={colorMode == 'dark' ? 'dark.primary' : 'gray.300'}>
 
@@ -152,33 +150,30 @@ return (
                                      <Badge fontSize = {{base : '10', '625px' : '11'}} position={'absolute'} top='2' ml='1' color = 'gray.600' bg = 'rgba(151, 217, 233, 0.493)'> {el.tag} </Badge>
                                      
 
-                                     <Box position={'absolute'} left = '2' bottom={'2'}>
+                                     <Box position={'absolute'} left = '2' bottom={{base : '1','512px' : '2'}}>
 
-                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[0]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[1]}</Text>
-                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[2]}</Text>
-                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[3]}</Text>
-                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[4]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[5]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[6]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[7]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[8]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[9]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[10]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[11]}</Text>
-                                      <Text  color={'gray.600'} as = 'span' fontSize={'13px'}>{el.ratings[12]}</Text>
+                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[0]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[1]}</Text>
+                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[2]}</Text>
+                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[3]}</Text>
+                                      <Text fontWeight={'700'} color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[4]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[5]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[6]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[7]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[8]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[9]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[10]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[11]}</Text>
+                                      <Text  color={'gray.600'} as = 'span' fontSize={{base : '11','512px' : '13px'}}>{el.ratings[12]}</Text>
                      
                                      </Box>
 
                                   
                                 </Box>
-
-                                </Skeleton> 
-                                   
+   
 
                               
-                                <Skeleton isLoaded = {isLoaded}>
-
+           
                                 <Box mt = '4px'>
 
                 
@@ -197,15 +192,15 @@ return (
                                               <Text fontSize = {{base : '14.5','512px':''}} color ={colorMode == 'dark' ? 'green.300' : 'green'}>{el.discount}</Text>
                                        </HStack>
                                        
-                                       <HStack display={{base : 'flex','566px' : 'none'}} mt = '18px' borderRadius={'5px'} border = '1px solid' borderColor={colorMode == 'light' ? 'gray.400' : 'gray.600'}>
+                                       <HStack spacing={'0px'} display={{base : 'flex','566px' : 'none'}} mt = '18px' borderRadius={'5px'} border = '1px solid' borderColor={colorMode == 'light' ? 'gray.400' : 'gray.600'}>
 
-                                            <Box p = '1' borderRight={'1px solid'} borderColor = {colorMode == 'light' ? 'gray.400' : 'gray.600'}>
+                                            <Box position = 'relative' top = '1' >
 
                                                  <LocalMallRoundedIcon sx = {{color : colorMode == 'light' ? 'rgb(255, 0, 89)' : 'rgb(0, 255, 149)'}} />
                                             
                                             </Box>
                                             
-                                            <Center w = '96%'>
+                                            <Box borderLeft = {'1px solid'} borderColor = {colorMode == 'light' ? 'gray.400' : 'gray.600'} w = {{base : '73%','425px' : '100%'}} >
                                                 
                                                 <Button isLoading = {false}
                                                         loadingText='Submitting'
@@ -214,23 +209,22 @@ return (
                                                         bg = ''
                                                         variant={'none'}
                                                         fontWeight={500}
-                                                        w = '100px'
+                                                        w = {{ base : '100%','425px': '100%', '512px' : '100px'}}
                                                         h = '30px'
+                                                        userSelect={'none'}
+                                
                                                         >
                                                             Add to Bag
                                                         </Button>
 
-                                            </Center>
+                                            </Box>
                                                 
                                         </HStack>
 
                                      
 
                                 </Box>
-
-                            </Skeleton> 
-                                   
-                                
+  
                              
                                 
                         

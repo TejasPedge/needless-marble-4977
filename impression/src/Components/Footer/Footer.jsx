@@ -17,7 +17,7 @@ import FreeShiping from './FreeShiping'
 import FooterBottomSection from './FooterBottomSection'
 
 function Footer() {
-  return (<Box minW = '415px'>
+  return (<Box minW={'332px'}>
     <Box  bg = 'gray.900' mt = '10'>
 
           <VStack py = {{base  : '3','619px':'10'}} pt = {{base  : '7','619px':'10'}}>

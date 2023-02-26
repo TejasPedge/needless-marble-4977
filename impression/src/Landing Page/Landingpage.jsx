@@ -54,7 +54,7 @@ import { Skeleton, SkeletonText } from "@chakra-ui/react";
 
 function Landingpage() {
 
-  const [slidervisibility,setSliderbtnvisibility] = useState(true);
+  const [slidervisibility,setSliderbtnvisibility] = useState(false);
 
   const {isLoaded} = useContext(Context);
 
@@ -92,7 +92,7 @@ function Landingpage() {
    <>
 
     
-     <Box minW={'415px'}>
+     <Box minW={'332px'}>
 
        
               {/*  Mobile view skin  care  section */}

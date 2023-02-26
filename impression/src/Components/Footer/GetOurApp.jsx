@@ -18,7 +18,7 @@ function GetOurApp() {
 
                             <StayPrimaryPortraitIcon />
 
-                            <Text fontWeight={500} fontSize={{base : '15','619px' : 13}}>EXPERIENCE THE IMPRESSION MOBILE APP</Text>
+                            <Text textAlign={'center'} fontWeight={500} fontSize={{base : '15','619px' : 13}}>EXPERIENCE THE IMPRESSION MOBILE APP</Text>
 
                     </HStack>
 
