@@ -14,7 +14,12 @@ import style from './Slider.module.css'
 
 
 
+
 import { Image } from "@chakra-ui/react";
+
+import Context from "../ContextApi/Context";
+
+import { useContext } from "react";
 
 // import required modules
 import { Autoplay,Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
@@ -23,24 +28,25 @@ import { Autoplay,Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 
+import { Skeleton } from "@chakra-ui/react";
  
 
 
-const Slider_Images = [
+// const Slider_Images = [
 
-    {img : 'https://images-static.nykaa.com/uploads/33c4212d-241b-41de-a8d2-c7b8d7d9cc13.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/79c1face-6380-476d-9cef-22bfbc4023cb.gif?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/0edd88f8-7241-42eb-ad2d-bd5642d0741a.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/d2052bfb-fc68-46ae-a16e-eb0645f19c89.png?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/8523b59b-1695-4a5d-bbc5-2f918bac1b05.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/8e38f956-76f6-4a96-a250-b69573e66696.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/4241760e-88e7-49b3-9235-580789facdb7.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/5d84f257-663d-4e03-9191-92dd6e53ea98.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/4241760e-88e7-49b3-9235-580789facdb7.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/ac086a5b-7bd2-46ed-a167-3746b11594f9.jpg?tr=w-1600,cm-pad_resize'}, //--
-    {img : 'https://images-static.nykaa.com/uploads/ce2a210b-93b9-4121-8838-d264b8da4cda.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/33c4212d-241b-41de-a8d2-c7b8d7d9cc13.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/79c1face-6380-476d-9cef-22bfbc4023cb.gif?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/0edd88f8-7241-42eb-ad2d-bd5642d0741a.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/d2052bfb-fc68-46ae-a16e-eb0645f19c89.png?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/8523b59b-1695-4a5d-bbc5-2f918bac1b05.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/8e38f956-76f6-4a96-a250-b69573e66696.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/4241760e-88e7-49b3-9235-580789facdb7.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/5d84f257-663d-4e03-9191-92dd6e53ea98.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/4241760e-88e7-49b3-9235-580789facdb7.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/ac086a5b-7bd2-46ed-a167-3746b11594f9.jpg?tr=w-1600,cm-pad_resize'}, //--
+//     {img : 'https://images-static.nykaa.com/uploads/ce2a210b-93b9-4121-8838-d264b8da4cda.jpg?tr=w-1600,cm-pad_resize'}, //--
 
-]
+// ]
 
 
 
@@ -48,6 +54,8 @@ const Slider_Images = [
 function NewatImpression({navigation,Impression_data,heading}) {
 
     const {colorMode} = useColorMode();
+
+    const {isLoaded} = useContext(Context)
 
     console.log(navigation, 'navb')
 
@@ -129,12 +137,20 @@ return (
                         console.log(el,'hii')
 
                         return <SwiperSlide className={style.swiperslide2} key = {Math.random()}>
-                            
+                             
+                         
+                         <Skeleton isLoaded = {isLoaded}>
+
                                 <Box borderRadius={'8px'} overflow={'hidden'} bg = 'white' pb = '25px' position={'relative'} border = '1px solid' borderColor={colorMode == 'dark' ? 'dark.primary' : 'gray.300'}>
 
+
+                                   
                                      <Image _hover = {{transform : 'scale(1.1)'}} transition = {'all 0.2s'} src = {el.img}></Image>
 
+                                     
+                                    
                                      <Badge fontSize = {{base : '10', '625px' : '11'}} position={'absolute'} top='2' ml='1' color = 'gray.600' bg = 'rgba(151, 217, 233, 0.493)'> {el.tag} </Badge>
+                                     
 
                                      <Box position={'absolute'} left = '2' bottom={'2'}>
 
@@ -154,14 +170,26 @@ return (
                      
                                      </Box>
 
+                                  
                                 </Box>
+
+                                </Skeleton> 
+                                   
+
+                              
+                                <Skeleton isLoaded = {isLoaded}>
 
                                 <Box mt = '4px'>
 
-                                       <Text fontWeight={'500'} fontSize={{base : '13','512px' : '15'}} noOfLines={2}>{el.title}</Text>
-
-                                       <Text fontSize={{base : '13','512px' : '15'}}  color = {colorMode == 'light' ? 'gray.600' : 'gray.400'} noOfLines={2}>{el.size}</Text>
+                
+                                          <Text fontWeight={'500'} fontSize={{base : '13','512px' : '15'}} noOfLines={2}>{el.title}</Text>
                                        
+                                    
+                                       
+                                          <Text fontSize={{base : '13','512px' : '15'}}  color = {colorMode == 'light' ? 'gray.600' : 'gray.400'} noOfLines={2}>{el.size}</Text>
+                                       
+                                      
+
                                        <HStack>
 
                                               <Text fontWeight={'600'}>{el.price}</Text>
@@ -195,12 +223,15 @@ return (
                                             </Center>
                                                 
                                         </HStack>
-                                   
+
+                                     
 
                                 </Box>
 
+                            </Skeleton> 
+                                   
                                 
-                                <></>
+                             
                                 
                         
                         

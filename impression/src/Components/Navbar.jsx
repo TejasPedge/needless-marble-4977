@@ -2,6 +2,8 @@ import style from '../Styles/Navbar.module.css'
 
 import styles from '../Styles/Dropdown.module.css'
 
+
+
 import { Center } from '@chakra-ui/react';
 
 import Navdrawer from './Navdrawer';
@@ -164,7 +166,7 @@ export default function Navbar() {
 
                      </HStack>
 
-                 <Image _hover = {{cursor : 'pointer'}}  w = {{base : '180px','450px' : '220px','675px' : '250px','852px' : '280px','990px' : '300px'}} borderRadius={'20px'} src = {useColorModeValue('Impression Logo lighttheme.png','Impression Logo.png')}></Image>
+                 <Image _hover = {{cursor : 'pointer'}}  w = {{base : '180px','450px' : '220px','675px' : '250px','852px' : '280px','990px' : '300px'}} borderRadius={'20px'} src = {useColorModeValue(`${process.env.PUBLIC_URL}/Impression Logo lighttheme.png`,`${process.env.PUBLIC_URL}/Impression Logo.png`)}></Image>
 
                  {/* ---------- Search Box -------- */}
 
