@@ -63,7 +63,7 @@ function Navdrawer({isOpen, onOpen, onClose, btnRef}) {
         {/* i added height for responsiveness in draweroverlay  */}
 
 
-        <DrawerOverlay display = {{base : 'flex', '1157px' : 'none'}}  minW = '415px' h = '100%' />
+        <DrawerOverlay minW = {'332px'} display = {{base : 'flex', '1157px' : 'none'}}  />
 
         <DrawerContent display = {{base : 'flex', '1157px' : 'none'}} bg = '#001e3c' background={useColorModeValue('linear-gradient(324deg, rgba(255,255,255,1) 0%, rgba(225,240,255,1) 60%, rgba(222,217,255,1) 94%, rgba(253,242,255,1) 100%)',   'linear-gradient(324deg, rgba(1,32,64,1) 0%, rgba(0,29,54,1) 53%, rgba(8,24,62,1) 94%, rgba(1,29,34,1) 100%)')}>
          
@@ -93,7 +93,7 @@ function Navdrawer({isOpen, onOpen, onClose, btnRef}) {
 
               <Text>⭐ 0</Text> 
 
-              <Text _hover = {{cursor : 'pointer'}} bg = {useColorModeValue('rgba(204, 201, 201, 0.464)','rgba(7, 18, 47, 0.473)')} px = '10px' py = '5px' borderRadius={'20px'}>Earn Coins</Text>               
+              <Text _hover = {{cursor : 'pointer'}} bg = {useColorModeValue('rgb(237, 233, 233)','rgba(7, 18, 47, 0.473)')} px = '10px' py = '5px' borderRadius={'10px'}>Earn Coins</Text>               
 
             </Flex>
 

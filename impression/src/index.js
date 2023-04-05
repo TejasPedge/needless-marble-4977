@@ -5,11 +5,26 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
 import overrides from './Chakra Customization/themes_store';
+import { ContextApiProvider } from './Components/ContextApi/Context';
+
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+        
   <ChakraProvider theme = {overrides}>
-      <App />
+
+         <ContextApiProvider>
+
+            <BrowserRouter>
+
+               <App />
+
+            </BrowserRouter>
+
+         </ContextApiProvider>
+
   </ChakraProvider>
 );
 

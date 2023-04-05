@@ -3,7 +3,11 @@ import React from 'react'
 
 import { Box, Image, SimpleGrid, GridItem, Text,useColorModeValue, useColorMode, Stack } from '@chakra-ui/react'
 
+import { useContext } from 'react';
 
+import Context from './ContextApi/Context';
+
+import { Skeleton } from '@chakra-ui/react';
 
 const brands = [
 
@@ -79,12 +83,17 @@ function Topbrands() {
 
    const {colorMode} = useColorMode();
 
+   const {isLoaded} = useContext(Context)
+
   return (
     <Box w = '97%' m = 'auto' mt = '10'>
 
 
-         <Text color={useColorModeValue('black', 'white')} mb = '2.5' fontWeight={'600'} fontSize={'24px'}>Top Brands</Text>
-                     
+       <Skeleton isLoaded = {isLoaded} w = '200px'>
+
+            <Text color={useColorModeValue('black', 'white')} mb = '2.5' fontWeight={'600'} fontSize={'24px'}>Top Brands</Text>
+
+        </Skeleton>           
 
     <SimpleGrid columns={{base : '1','512px' : '2','841px' : '3'}} spacing = {{base : '4','512px' : '5'}}>
 
@@ -94,16 +103,28 @@ function Topbrands() {
 
                                 <Box overflow='hidden'>
 
-                                     <Image _hover = {{transform : 'scale(1.1)'}} transition = {'all 0.2s'} w = '100%' src = {el.img}></Image>
+                                    <Skeleton isLoaded = {isLoaded}>
+
+                                        <Image _hover = {{transform : 'scale(1.1)'}} transition = {'all 0.2s'} w = '100%' src = {el.img}></Image>
+                                    
+                                    </Skeleton> 
 
                                 </Box>
                                  
 
                                  <Stack lineHeight={1} p = '16px' pl = '25px'>
 
-                                    <Text noOfLines={1} color = {colorMode == 'light' ? '#E80071' : 'dark.primary'} fontWeight={600} fontSize={['18px','19px','20px','21px','22px']}>{el.heading}</Text>
-                        
+                                 <Skeleton isLoaded = {isLoaded} w = '200px'>
+
+                                      <Text noOfLines={1} color = {colorMode == 'light' ? '#E80071' : 'dark.primary'} fontWeight={600} fontSize={['18px','19px','20px','21px','22px']}>{el.heading}</Text>
+                                      
+                                  </Skeleton>
+
+                                  <Skeleton isLoaded = {isLoaded} >
+
                                     <Text noOfLines={2} color = {colorMode == 'dark' ?'gray.400' : 'gray.600'} fontWeight={600}>{el.text}</Text>
+
+                                  </Skeleton>
 
                                  </Stack>
 
@@ -117,16 +138,30 @@ function Topbrands() {
 
                 <Box overflow='hidden' h = '179px'>
 
+                <Skeleton isLoaded = {isLoaded} >
+
+
                     <Image _hover = {{transform : 'scale(1.1)'}} transition = {'all 0.2s'} w = '100%' src = {'https://images-static.nykaa.com/uploads/5d84f257-663d-4e03-9191-92dd6e53ea98.jpg?tr=w-1600,cm-pad_resize'}></Image>
+                
+                </Skeleton>
 
                 </Box>
                 
 
                 <Stack lineHeight={1} p = '16px' pl = '25px'>
 
-                    <Text noOfLines={1} color = {colorMode == 'light' ? '#E80071' : 'dark.primary'} fontWeight={600} fontSize={['18px','19px','20px','21px','22px']}>Up To 15% Off</Text>
+                    <Skeleton isLoaded = {isLoaded} w = '200px' >
 
-                    <Text noOfLines={2} color = {colorMode == 'dark' ?'gray.400' : 'gray.600'} fontWeight={600}>#1 Dermatologist Recommended Brand in India</Text>
+                    <Text noOfLines={1} color = {colorMode == 'light' ? '#E80071' : 'dark.primary'} fontWeight={600} fontSize={['18px','19px','20px','21px','22px']}>Up To 15% Off</Text>
+                    
+                    </Skeleton>
+
+                    <Skeleton isLoaded = {isLoaded} >
+
+                       <Text noOfLines={2} color = {colorMode == 'dark' ?'gray.400' : 'gray.600'} fontWeight={600}>#1 Dermatologist Recommended Brand in India</Text>
+
+                    </Skeleton>
+
 
                 </Stack>
 

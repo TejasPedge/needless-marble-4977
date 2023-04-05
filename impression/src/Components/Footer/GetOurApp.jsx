@@ -18,7 +18,7 @@ function GetOurApp() {
 
                             <StayPrimaryPortraitIcon />
 
-                            <Text fontWeight={500} fontSize={{base : '15','619px' : 13}}>EXPERIENCE THE IMPRESSION MOBILE APP</Text>
+                            <Text textAlign={'center'} fontWeight={500} fontSize={{base : '15','619px' : 13}}>EXPERIENCE THE IMPRESSION MOBILE APP</Text>
 
                     </HStack>
 
@@ -26,11 +26,11 @@ function GetOurApp() {
 
                         {/* play Store logo */}
 
-                          <Image ml = '5' _hover = {{cursor : 'pointer'}} w = '140px' borderRadius={'10px'} src = 'Playstore.png' />
+                          <Image ml = '5' _hover = {{cursor : 'pointer'}} w = '140px' borderRadius={'10px'} src = {`${process.env.PUBLIC_URL}/Playstore.png`} />
 
                         {/* App Store Logo */}
 
-                          <Image _hover = {{cursor : 'pointer'}} w = '108px' src = 'AppStore.png' />
+                          <Image _hover = {{cursor : 'pointer'}} w = '108px' src = {`${process.env.PUBLIC_URL}/AppStore.png`} />
 
                          
 

@@ -96,7 +96,7 @@ function Footeroptions() {
 
                            <Stack align={'center'}   p = '40px'>
 
-                                <Image mb = {'5'} w = '200px' minW = '180px' borderRadius={'20px'} src = {useColorModeValue('Impression Logo lighttheme.png','Impression Logo.png')}></Image>
+                                <Image mb = {'5'} w = '200px' minW = '180px' borderRadius={'20px'} src = {useColorModeValue(`${process.env.PUBLIC_URL}/ImpressionLogolighttheme.png`,`${process.env.PUBLIC_URL}/ImpressionLogo.png`)}></Image>
 
                                 <Stack>
 
