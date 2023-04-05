@@ -139,7 +139,7 @@ return (
                         return <SwiperSlide className={style.swiperslide2} key = {Math.random()}>
                       
 
-                                <Box borderRadius={'8px'} overflow={'hidden'} bg = 'white' pb = '25px' position={'relative'} border = '1px solid' borderColor={colorMode == 'dark' ? 'dark.primary' : 'gray.300'}>
+                                <Box _hover = {{cursor : 'pointer'}} borderRadius={'8px'} overflow={'hidden'} bg = 'white' pb = '25px' position={'relative'} border = '1px solid' borderColor={colorMode == 'dark' ? 'dark.primary' : 'gray.300'}>
 
 
                                    

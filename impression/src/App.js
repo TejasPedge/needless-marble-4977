@@ -18,8 +18,7 @@
             <Navbar />
              
             <AllRoutes />
-
-
+            
             <Footer/>
 
 

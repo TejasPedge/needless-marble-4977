@@ -14,6 +14,8 @@ import { IconButton } from '@chakra-ui/react'
 
 import { Button, Text, useDisclosure } from "@chakra-ui/react";
 
+import { Link } from 'react-router-dom';
+
 import { Box,HStack,VStack,Image, Input } from "@chakra-ui/react";
 
 import { useColorMode,  useColorModeValue } from "@chakra-ui/react";
@@ -178,9 +180,19 @@ export default function Navbar() {
 
 
 
+              
+                    <Box h = 'auto' borderRadius={'20px'}  w = {{base : '41%','369px' : '45%' ,'444px' : '50%','450px' : '220px','675px' : '250px','852px' : '280px','990px' : '300px'}}>
 
+                       <Link className='link' to = '/'>
 
-                 <Image _hover = {{cursor : 'pointer'}}  w = {{base : '41%','369px' : '45%' ,'444px' : '50%','450px' : '220px','675px' : '250px','852px' : '280px','990px' : '300px'}} borderRadius={'20px'} src = {useColorModeValue(`${process.env.PUBLIC_URL}/Impression Logo lighttheme.png`,`${process.env.PUBLIC_URL}/Impression Logo.png`)}></Image>
+                        <Image borderRadius={'20px'} src = {useColorModeValue(`${process.env.PUBLIC_URL}/ImpressionLogolighttheme.png`,`${process.env.PUBLIC_URL}/ImpressionLogo.png`)}></Image>
+
+                       </Link>
+
+                    </Box>
+
+           
+               
 
                  {/* ---------- Search Box -------- */}
 
