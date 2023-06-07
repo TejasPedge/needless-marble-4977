@@ -13,7 +13,7 @@ function SingleSliderPage() {
 
 
   return (
-    <Box  minW = '415px'>Work in Progress this page will be available soon</Box>
+    <Box  minW = '332px'>Work in Progress this page will be available soon</Box>
   )
 }
 
