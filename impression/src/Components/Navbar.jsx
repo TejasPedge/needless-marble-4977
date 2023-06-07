@@ -158,7 +158,7 @@ export default function Navbar() {
 
 {/* ----------minW = '415px'---- */}
        
-       <Box minW = '332px' w = '100%' bg ={useColorModeValue('rgba(255, 255, 255, 0.564)','#001e3cb4')} background={useColorModeValue('linear-gradient(324deg, rgba(255,255,255,1) 0%, rgba(225,240,255,1) 60%, rgba(222,217,255,1) 94%, rgba(253,242,255,1) 100%)',   'linear-gradient(324deg, rgba(1,32,64,1) 0%, rgba(0,29,54,1) 53%, rgba(8,24,62,1) 94%, rgba(1,29,34,1) 100%)')} zIndex={2} className="blur-nav" filter={'auto'} backdropFilter='blur(26px)' position={'sticky'} top='0' as = 'nav' >
+       <Box  minW = '332px' w = '100%' bg ={useColorModeValue('rgba(255, 255, 255, 0.564)','#001e3cb4')} background={useColorModeValue('linear-gradient(324deg, rgba(255,255,255,1) 0%, rgba(225,240,255,1) 60%, rgba(222,217,255,1) 94%, rgba(253,242,255,1) 100%)',   'linear-gradient(324deg, rgba(1,32,64,1) 0%, rgba(0,29,54,1) 53%, rgba(8,24,62,1) 94%, rgba(1,29,34,1) 100%)')} zIndex={2} className="blur-nav" filter={'auto'} backdropFilter='blur(26px)' position={'sticky'} top='0' as = 'nav' >
 
 
               {/* minW = '415px' */}
@@ -208,7 +208,7 @@ export default function Navbar() {
 
 
 
-               <HStack  w = {{ base : '100px','528px' : '150px','638px':'190px'}} justify={'space-between'}  position={'relative'}>
+               <HStack w = {{ base : '100px','528px' : '150px','638px':'190px'}} justify={'space-between'}  position={'relative'}>
 
                              {/* Mui User login logo */}
 
@@ -263,12 +263,12 @@ export default function Navbar() {
             {/* After Navbar Dropdown options*/}
 
 
-            <HStack position={'relative'} display = {{base : 'none', '1157px' : 'flex'}} pt='6' borderBottom = '1px solid' borderColor={useColorModeValue('gray.300','blue.700')} px = '10px' justify = 'space-around'>
+            <HStack  position={'relative'} display = {{base : 'none', '1157px' : 'flex'}} pt='4' borderBottom = '1px solid' borderColor={useColorModeValue('gray.300','blue.700')} px = '10px' justify = 'space-around' borderTop = '1px solid #bebaba78'>
 
 
                    {dropdown_options.map((el,i) => {
 
-                       return <Text className = {styles[`drp${i}`]} pb = '3' color = {colorMode == 'light' ? ('gray.600') :('gray.300')} key = {el.text} _hover = {{cursor : 'pointer', color : colorMode == 'light' ? 'purple' : 'aqua'}}  fontWeight={'600'} fontSize={'1rem'}>{el.text}</Text>
+                       return <Text className = {styles[`drp${i}`]} pb = '3' color = {colorMode == 'light' ? ('gray.600') :('gray.300')} key = {el.text} _hover = {{cursor : 'pointer', color : colorMode == 'light' ? 'purple' : 'aqua'}}  fontWeight={'600'} fontSize={'14'}>{el.text}</Text>
 
                    })}
 
