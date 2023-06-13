@@ -2,8 +2,6 @@ import style from '../Styles/Navbar.module.css'
 
 import styles from '../Styles/Dropdown.module.css'
 
-
-
 import { Center } from '@chakra-ui/react';
 
 import Navdrawer from './Navdrawer';
@@ -33,6 +31,9 @@ import { useBreakpointValue } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 import { useRef } from 'react';
+
+import {LoginModal} from './Modal/Modal'
+
 
 // Material UI Imports [ LOGOS ]  //
 
@@ -68,10 +69,14 @@ export default function Navbar() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const { isOpen : isOpen_LoginModal, onOpen : onOpen_LoginModal , onClose : onClose_LoginModal} = useDisclosure();
+
 
   const { colorMode, toggleColorMode } = useColorMode();
 
   const btnRef = useRef();
+
+  const x = useRef();
 
   const Hidedrawer = ( ) => {
 
@@ -93,7 +98,30 @@ export default function Navbar() {
     Hidedrawer();
   });
 
-  
+
+  document.addEventListener('click', (e) =>{
+
+    if(!e.target.closest('.login-modal') && !x.current.contains(e.target)) {
+        onClose_LoginModal();
+    }
+
+  });
+
+
+//   hides the login modal if open on scrolling  little down 
+
+document.addEventListener('scroll', () => {
+
+    let scrollPosition = window.scrollY;
+
+    if(scrollPosition >= 656) {
+        onClose_LoginModal();
+    }
+
+
+})
+
+console.log('rerendered');
 
 
 
@@ -106,9 +134,6 @@ export default function Navbar() {
                           '1067px' : '40%',
 
                           '1161px' : '45%',
-
-                    
-
                       };
 
   return <>
@@ -158,7 +183,7 @@ export default function Navbar() {
 
 {/* ----------minW = '415px'---- */}
        
-       <Box minW = '332px' w = '100%' bg ={useColorModeValue('rgba(255, 255, 255, 0.564)','#001e3cb4')} background={useColorModeValue('linear-gradient(324deg, rgba(255,255,255,1) 0%, rgba(225,240,255,1) 60%, rgba(222,217,255,1) 94%, rgba(253,242,255,1) 100%)',   'linear-gradient(324deg, rgba(1,32,64,1) 0%, rgba(0,29,54,1) 53%, rgba(8,24,62,1) 94%, rgba(1,29,34,1) 100%)')} zIndex={2} className="blur-nav" filter={'auto'} backdropFilter='blur(26px)' position={'sticky'} top='0' as = 'nav' >
+       <Box  minW = '332px' w = '100%' bg ={useColorModeValue('rgba(255, 255, 255, 0.564)','#001e3cb4')} background={useColorModeValue('linear-gradient(324deg, rgba(255,255,255,1) 0%, rgba(225,240,255,1) 60%, rgba(222,217,255,1) 94%, rgba(253,242,255,1) 100%)',   'linear-gradient(324deg, rgba(1,32,64,1) 0%, rgba(0,29,54,1) 53%, rgba(8,24,62,1) 94%, rgba(1,29,34,1) 100%)')} zIndex={2} className="blur-nav" filter={'auto'} backdropFilter='blur(26px)' position={'sticky'} top='0' as = 'nav' >
 
 
               {/* minW = '415px' */}
@@ -176,11 +201,10 @@ export default function Navbar() {
 
                             <IconButton size  = {{base : 'sm','528px' : 'md'}} display={{base : 'flex','976px':'none'}}  aria-label='Search database' icon={<SearchIcon  color = {useColorModeValue('black','dark.primary') } />} />
 
-                     </HStack>
+                    </HStack>
 
 
 
-              
                     <Box h = 'auto' borderRadius={'20px'}  w = {{base : '41%','369px' : '45%' ,'444px' : '50%','450px' : '220px','675px' : '250px','852px' : '280px','990px' : '300px'}}>
 
                        <Link className='link' to = '/'>
@@ -208,18 +232,20 @@ export default function Navbar() {
 
 
 
-               <HStack  w = {{ base : '100px','528px' : '150px','638px':'190px'}} justify={'space-between'}  position={'relative'}>
+               <HStack w = {{ base : '100px','528px' : '150px','638px':'190px'}} justify={'space-between'}  position={'relative'}>
 
                              {/* Mui User login logo */}
 
-                             <Box  display={{base : 'none','528px' : 'flex'}} justify = 'center' align = 'center'>
+                             <Box position={'relative'}  display={{base : 'none','528px' : 'flex'}} justify = 'center' align = 'center'>
 
-                                    <LoginIcon className = {style.muiicon} sx = {{color : colorMode == 'light' ? '#6B46C1' : 'rgb(0, 255, 213)'}} />
+                                    <LoginIcon ref = {(el) => x.current = el} onClick = {onOpen_LoginModal} className = {style.muiicon} sx = {{color : colorMode == 'light' ? '#6B46C1' : 'rgb(0, 255, 213)'}} />
                                     
                                         {/* Tooltip */}
 
-                                    <Box bg = {useColorModeValue('gray.200','rgb(15, 39, 87)')} w = '54px' borderRadius={'10px'} className={style.tooltip}  px = '2' border = '1px solid'>Login</Box>
+                                    <Box zIndex={2} bg = {useColorModeValue('gray.200','rgb(15, 39, 87)')} w = '54px' borderRadius={'10px'} className={style.tooltip}  px = '2' border = '1px solid' >Login</Box>
 
+                                    {/* Login modal  */}
+                                    <LoginModal  isOpen = {isOpen_LoginModal} onClose = {onClose_LoginModal} />
                              </Box>
                             
                              {/* Mui  Cart Logo with badge */}
@@ -232,7 +258,7 @@ export default function Navbar() {
 
                                       {/* Tooltip */}
 
-                                      <Box bg = {useColorModeValue('gray.200','rgb(15, 39, 87)')} w = '44px' borderRadius={'10px'} className={style.tooltip2}  px = '2' border = '1px solid'>Cart</Box>
+                                      <Box zIndex={2} bg = {useColorModeValue('gray.200','rgb(15, 39, 87)')} w = '44px' borderRadius={'10px'} className={style.tooltip2}  px = '2' border = '1px solid'>Cart</Box>
 
                             </Box>
 
@@ -263,12 +289,12 @@ export default function Navbar() {
             {/* After Navbar Dropdown options*/}
 
 
-            <HStack position={'relative'} display = {{base : 'none', '1157px' : 'flex'}} pt='6' borderBottom = '1px solid' borderColor={useColorModeValue('gray.300','blue.700')} px = '10px' justify = 'space-around'>
+            <HStack  position={'relative'} display = {{base : 'none', '1157px' : 'flex'}} pt='4' borderBottom = '1px solid' borderTop = '1px solid' borderColor={useColorModeValue('gray.300','blue.700')} px = '10px' justify = 'space-around'  >
 
 
                    {dropdown_options.map((el,i) => {
 
-                       return <Text className = {styles[`drp${i}`]} pb = '3' color = {colorMode == 'light' ? ('gray.600') :('gray.300')} key = {el.text} _hover = {{cursor : 'pointer', color : colorMode == 'light' ? 'purple' : 'aqua'}}  fontWeight={'600'} fontSize={'1rem'}>{el.text}</Text>
+                       return <Text className = {styles[`drp${i}`]} pb = '3' color = {colorMode == 'light' ? ('gray.600') :('gray.300')} key = {el.text} _hover = {{cursor : 'pointer', color : colorMode == 'light' ? 'purple' : 'aqua'}}  fontWeight={'600'} fontSize={'14'}>{el.text}</Text>
 
                    })}
 
