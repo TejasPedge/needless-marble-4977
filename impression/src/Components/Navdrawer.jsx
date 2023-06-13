@@ -44,7 +44,6 @@ function Navdrawer({isOpen, onOpen, onClose, btnRef}) {
 
    const {toggleColorMode, colorMode} =  useColorMode(); 
 
-   console.log(window.screen)
 
   return (
     <>
